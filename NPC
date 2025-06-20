@@ -9,11 +9,18 @@ public class NPC : MonoBehaviour
     {
         health += level;
         print("Здоровье NPC "+health);
+
+      
+
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-}
+
+        Vector3 newPosition = transform.position;
+        newPosition.z -= speed * Time.deltaTime;
+
+        transform.position = newPosition;
+
